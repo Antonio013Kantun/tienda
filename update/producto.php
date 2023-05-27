@@ -38,6 +38,17 @@ $consulta2 =" CALL p_obtenerProducto('$id_producto')";
 //     ON producto.id_fabricante_id = fabricante.id_fabricante WHERE id_producto = '$id_producto'";
 
 
+
+// PROCEDIMIENTO ALMACENADO
+// CREATE DEFINER=`root`@`localhost` PROCEDURE `p_obtenerProducto`(IN producto_id INT)
+// BEGIN
+// SELECT producto.id_producto, producto.nombre, producto.precio, producto.id_fabricante_id, fabricante.nombre AS fabricante
+// FROM producto
+// INNER JOIN fabricante ON producto.id_fabricante_id = fabricante.id_fabricante
+// WHERE producto.id_producto = producto_id;
+// END
+
+
 $query2 = mysqli_query($conn, $consulta2);
 
 // $fila = mysqli_fetch_array($query)

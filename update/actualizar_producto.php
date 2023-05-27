@@ -15,8 +15,14 @@ $consulta = " CALL p_actualizarProducto('$nombre_producto', '$precio', '$id_fabr
 // precio = '$precio', id_fabricante_id = '$id_fabricante' WHERE id_producto = '$id_producto'";
 
 
-// $consulta = "UPDATE producto SET nombre = '$nombre_producto', precio = '$precio', id_fabricante_id = '$id_fabricante' 
-// WHERE id_producto = '$id_producto'";
+
+// PROCEDIMIENTO ALMACENADO
+// CREATE DEFINER=`root`@`localhost` PROCEDURE `p_actualizarProducto`(
+//     IN nombre_producto VARCHAR(50), IN precio DOUBLE, IN id_fabricante INT, IN producto_id INT)
+//     BEGIN 
+//     UPDATE producto SET nombre = nombre_producto, precio = precio, id_fabricante_id = id_fabricante
+//     WHERE id_producto = producto_id;
+//     END
 
 $query = mysqli_query($conn, $consulta);
 

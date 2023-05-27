@@ -7,6 +7,13 @@
 
     $consulta = " CALL p_eliminarProducto('$id_producto')";
 
+    // PROCEDIMIENTO ALMACENADO
+    // CREATE DEFINER=`root`@`localhost` PROCEDURE `p_eliminarProducto`(IN producto_id INT)
+    // BEGIN
+    // DELETE FROM producto
+    // WHERE id_producto = producto_id;
+    // END
+
     $query = mysqli_query($conn,$consulta);
 
     header('Location: ../productos.php');

@@ -52,6 +52,15 @@
 
                 $c = 1;
                 $consulta = "call p_verFabricante()";
+
+
+                // PROCEDIMIENTO ALMACENADO
+                // CREATE DEFINER=`root`@`localhost` PROCEDURE `p_verFabricante`()
+                // BEGIN 
+                // SELECT id_fabricante, fabricante.nombre as fabricante, count(id_producto) as contador from producto  right join 
+                // fabricante on producto.id_fabricante_id = fabricante.id_fabricante group by id_fabricante;
+                // END
+
                 $query = mysqli_query($conn, $consulta);
 
                 while ($fila = mysqli_fetch_array($query)) {

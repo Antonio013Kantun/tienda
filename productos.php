@@ -36,8 +36,18 @@
                 <select name="id_fabricante" class="form-select" aria-label="Default select example">
                     <?php
                     include('connection/connection.php');
+                    
+                    $consulta =" CALL p_obtenerTablaFabricantes()";
 
-                    $consulta = "SELECT*FROM fabricante";
+                    // $consulta = "SELECT*FROM fabricante";
+
+                    // PROCEDIMIENTO ALMACENADO
+                    // CREATE PROCEDURE p_obtenerTablaFabricantes()
+                    // BEGIN
+                    //     SELECT *
+                    //     FROM fabricante;
+                    // END 
+
                     $query = mysqli_query($conn, $consulta);
 
                     while ($fila = mysqli_fetch_array($query)) {
@@ -72,6 +82,18 @@
                 include('connection/connection.php');
 
                 $consulta = "CALL p_verProductos()";
+
+                // PROCEDIMIENTO ALMACENADO
+                // CREATE DEFINER=`root`@`localhost` PROCEDURE `p_verProductos`()
+                // BEGIN
+                // SELECT id_producto, producto.nombre AS producto, precio, fabricante.nombre
+                // AS fabricantes
+                // FROM producto 
+                // INNER JOIN fabricante
+                // ON producto.id_fabricante_id = fabricante.id_fabricante;
+                // END
+
+
                 $query = mysqli_query($conn, $consulta);
 
                 while ($fila = mysqli_fetch_array($query)) {

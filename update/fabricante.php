@@ -30,6 +30,18 @@ $consulta = "CALL p_obtenerFabricante($id_fabricante)";
 
 // $consulta = "SELECT * FROM fabricante WHERE id_fabricante = '$id_fabricante'";
 
+
+
+
+// PROCEDIMIENTO ALMACENADO
+
+// CREATE DEFINER=`root`@`localhost` PROCEDURE `p_obtenerFabricante`(IN fabricante_id INT)
+// BEGIN
+//     SELECT *
+//     FROM fabricante
+//     WHERE id_fabricante = fabricante_id;
+// END
+
 $query = mysqli_query($conn, $consulta);
 
 $fila = mysqli_fetch_array($query)
