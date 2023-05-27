@@ -29,11 +29,15 @@ include('../connection/connection.php');
 // $consulta = "SELECT * FROM producto WHERE id_producto = '$id_producto'";
 // $query = mysqli_query($conn, $consulta);
 
-$consulta2 = "SELECT id_producto,producto.nombre, precio,id_fabricante_id, fabricante.nombre
-    AS fabricante
-    FROM producto
-    INNER JOIN fabricante
-    ON producto.id_fabricante_id = fabricante.id_fabricante WHERE id_producto = '$id_producto'";
+$consulta2 =" CALL p_obtenerProducto('$id_producto')";
+
+// $consulta2 = "SELECT id_producto,producto.nombre, precio,id_fabricante_id, fabricante.nombre
+//     AS fabricante
+//     FROM producto
+//     INNER JOIN fabricante
+//     ON producto.id_fabricante_id = fabricante.id_fabricante WHERE id_producto = '$id_producto'";
+
+
 $query2 = mysqli_query($conn, $consulta2);
 
 // $fila = mysqli_fetch_array($query)
@@ -58,7 +62,10 @@ $fila2 = mysqli_fetch_array($query2);
                     <?php
                     include('connection/connection.php');
 
-                    $consulta = "SELECT*FROM fabricante";
+                    $consulta = " CALL p_obtenerFabricantes()";
+
+                    // $consulta = "SELECT*FROM fabricante";
+
                     $query = mysqli_query($conn, $consulta);
 
                     while ($fila = mysqli_fetch_array($query)) {

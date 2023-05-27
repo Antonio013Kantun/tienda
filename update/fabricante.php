@@ -25,7 +25,10 @@ print_r($_POST);
 $id_fabricante = $_GET['id_fabricante'];
 
 include('../connection/connection.php');
-$consulta = "SELECT * FROM fabricante WHERE id_fabricante = '$id_fabricante'";
+
+$consulta = "CALL p_obtenerFabricante($id_fabricante)";
+
+// $consulta = "SELECT * FROM fabricante WHERE id_fabricante = '$id_fabricante'";
 
 $query = mysqli_query($conn, $consulta);
 

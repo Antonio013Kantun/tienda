@@ -7,8 +7,9 @@
 
     include('../connection/connection.php');
 
-    $consulta = "INSERT INTO producto (nombre,precio,id_fabricante_id)
-    VALUE ('$nombre_producto ','$precio','$id_fabricante')";
+    $consulta = " CALL p_registroProducto('$nombre_producto', '$precio', '$id_fabricante')";
+    // $consulta = "INSERT INTO producto (nombre,precio,id_fabricante_id)
+    // VALUE ('$nombre_producto ','$precio','$id_fabricante')";
 
     $query = mysqli_query($conn,$consulta);
 

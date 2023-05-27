@@ -6,7 +6,9 @@
 
     include('../connection/connection.php');
 
-    $consulta = "INSERT INTO fabricante (nombre) VALUE ('$nombre_fabricante')";
+    $consulta = " CALL p_registroFabricante('$nombre_fabricante')";
+
+    // $consulta = "INSERT INTO fabricante (nombre) VALUE ('$nombre_fabricante')";
 
     $query = mysqli_query($conn, $consulta);
 

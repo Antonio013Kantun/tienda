@@ -8,7 +8,8 @@ $id_producto = $_POST['id_producto'];
 
 include('../connection/connection.php');
 
-$consulta = "CALL p_actualizarProducto('$nombre_producto', '$precio', '$id_fabricante', '$id_producto')";
+$consulta = " CALL p_actualizarProducto('$nombre_producto', '$precio', '$id_fabricante', '$id_producto')";
+
 
 // $consulta = "UPDATE producto SET nombre = '$nombre_producto', 
 // precio = '$precio', id_fabricante_id = '$id_fabricante' WHERE id_producto = '$id_producto'";
